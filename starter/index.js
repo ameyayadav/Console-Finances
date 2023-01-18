@@ -1,4 +1,4 @@
-var finances = [
+const finances = [
 ['Jan-2010', 867884],
 ['Feb-2010', 984655],
 ['Mar-2010', 322013],
@@ -86,3 +86,17 @@ var finances = [
 ['Jan-2017', 138230],
 ['Feb-2017', 671099]
 ];
+
+// to check the total no of months
+let financeLength = finances.length;
+
+// AFTER LOGGING ANS IS 86 MONTHS   
+console.log(financeLength);
+
+let totalAmount = 0;
+for (let i = 0; i<financeLength; i++){
+    totalAmount += finances[i];
+}
+console.log(totalAmount)
+
+console.log(finances [i][1]);
