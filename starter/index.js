@@ -87,16 +87,40 @@ const finances = [
 ['Feb-2017', 671099]
 ];
 
+
+
 // to check the total no of months
 let financeLength = finances.length;
 
 // AFTER LOGGING ANS IS 86 MONTHS   
 console.log(financeLength);
 
+
+
+// Give the total amount of profit
 let totalAmount = 0;
-for (let i = 0; i<financeLength; i++){
-    totalAmount += finances[i];
+for (let i = 0; i < financeLength; i++){
+    totalAmount += finances[i][1];
 }
 console.log(totalAmount)
 
-console.log(finances [i][1]);
+
+let Changes = [];
+
+
+   
+for (let i = 0; i<finances.length-1;i++){
+
+    
+    
+}
+
+
+
+
+// const Changes = 0;
+
+// let firstChange = finances[0][1];
+
+
+
