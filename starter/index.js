@@ -104,16 +104,34 @@ for (let i = 0; i < financeLength; i++){
 }
 console.log(totalAmount)
 
-
+// declared the variable to chect the changes in array
 let Changes = [];
 
-
-   
-for (let i = 0; i<finances.length-1;i++){
-
-    
+for (let i =0; i < finances.length-1; i++){
+    Changes[i] = finances[i+1][1];
     
 }
+
+
+
+
+let sum =Changes.reduce(
+    (a,b) => a+b,0);
+let avg = sum/Changes.length;
+
+console.log(avg);
+
+// for (let i = 0; i<finances.length-1;i++){
+
+//     let everyMonth = finances [i][1];
+//     let previousMonth = finances[i-1][1];
+//     let Diff = everyMonth-previousMonth;
+//     newDiff +=Diff;
+
+    
+// }
+
+// let Avg = Diff/financeLength;
 
 
 
@@ -124,3 +142,26 @@ for (let i = 0; i<finances.length-1;i++){
 
 
 
+// console.log("Financial Analysis");
+
+// let totalMonths = finances.length;
+// console.log("Total Months:", totalMonths);
+
+// let sum = 0;
+// for (let i = 0; i < finances.length; i++) {
+//   sum += finances[i][1];
+// }
+// console.log("Total:", sum);
+
+// let totalDifference = 0;
+// for (let i = 1; i < finances.length; i++) {
+//     let arrayCurrent = finances[i][1];
+//     let arrayPrevious = finances[i - 1][1];
+//     let difference = arrayCurrent - arrayPrevious;
+//     totalDifference += difference;
+//   }
+
+// let average = totalDifference / 86;
+// average = Math.round(average * 100) / 100;
+// console.log("Total Average:" , average);
+  
