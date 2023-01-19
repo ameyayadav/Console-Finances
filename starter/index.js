@@ -104,16 +104,17 @@ for (let i = 0; i < financeLength; i++){
 }
 console.log(totalAmount)
 
-// declared the variable to chect the changes in array
+// declared the variable to check the changes in array
 let Changes = [];
 
+// Calculate the change in profit
 for (let i =0; i < finances.length-1; i++){
     Changes[i] = finances[i+1][1];
     
 }
 
 
-
+    // Calculate the average change in profit
 
 let sum =Changes.reduce(
     (a,b) => a+b,0);
@@ -121,47 +122,22 @@ let avg = sum/Changes.length;
 
 console.log(avg);
 
-// for (let i = 0; i<finances.length-1;i++){
 
-//     let everyMonth = finances [i][1];
-//     let previousMonth = finances[i-1][1];
-//     let Diff = everyMonth-previousMonth;
-//     newDiff +=Diff;
+// let largestProfit = 0;
+// let largestProfitMonth = "";
+// let largestLoss = 0;
+// let largestLossMonth = "";
 
-    
-// }
-
-// let Avg = Diff/financeLength;
-
-
-
-
-// const Changes = 0;
-
-// let firstChange = finances[0][1];
-
-
-
-// console.log("Financial Analysis");
-
-// let totalMonths = finances.length;
-// console.log("Total Months:", totalMonths);
-
-// let sum = 0;
-// for (let i = 0; i < finances.length; i++) {
-//   sum += finances[i][1];
-// }
-// console.log("Total:", sum);
-
-// let totalDifference = 0;
 // for (let i = 1; i < finances.length; i++) {
-//     let arrayCurrent = finances[i][1];
-//     let arrayPrevious = finances[i - 1][1];
-//     let difference = arrayCurrent - arrayPrevious;
-//     totalDifference += difference;
+//   let profitLoss = finances[i] - finances[i-1];
+//   if (profitLoss > largestProfit) {
+//     largestProfit = profitLoss;
+//     largestProfitMonth = months[i];
+//   } else if (profitLoss < largestLoss) {
+//     largestLoss = profitLoss;
+//     largestLossMonth = months[i];
 //   }
+// }
 
-// let average = totalDifference / 86;
-// average = Math.round(average * 100) / 100;
-// console.log("Total Average:" , average);
-  
+// console.log("Largest Profit: $" + largestProfit + " in " + largestProfitMonth);
+// console.log("Largest Loss: $" + largestLoss + " in " + largestLossMonth);
