@@ -93,7 +93,7 @@ const finances = [
 let financeLength = finances.length;
 
 // AFTER LOGGING ANS IS 86 MONTHS   
-console.log(financeLength);
+
 
 
 
@@ -102,8 +102,6 @@ let totalProfit = 0;
 for (let i = 0; i < financeLength; i++){
     totalProfit += finances[i][1];
 }
-console.log(totalProfit)
-
 
 
 // Calculate the change in profits over the month 
@@ -118,16 +116,19 @@ let changes = finances.reduce((acc, curr, index) => {
     return acc;
 }, []);
 
-// After cal the change in profit over the month the cal the average 
+// After cal the change in profit over the month then looping over the created 
+//  array and cal the average 
 // change over the month 
 
 let totalSum = 0;
 changes.forEach(change => {
   totalSum += change;
 });
+
+// Calculating the average value 
 let averageChange = totalSum / changes.length;
 
-console.log(averageChange.toFixed(2));
+
 
 // Calculated Greater Profits and Losses Over the Entire Period 
 
@@ -139,8 +140,12 @@ let addTwo = maxInc.concat(Profit);
 let minDec = [finances[changes.indexOf(Math.min(...changes))][0]];
 let Loss = Math.min(...changes);
 let result = minDec.concat(Loss)
-console.log (result);
-console.log(addTwo);
+
+console.log("Total Months: " + financeLength);
+console.log("Total : $" + totalProfit);
+console.log("Average Change : $" + averageChange.toFixed(2));
+console.log ("Greatest Increase in Profits: " + "$" + result);
+console.log("Greatest Increase in Loss: " + "$" + addTwo);
 
 
 
