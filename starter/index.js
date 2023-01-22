@@ -98,46 +98,78 @@ console.log(financeLength);
 
 
 // Give the total amount of profit
-let totalAmount = 0;
+let totalProfit = 0;
 for (let i = 0; i < financeLength; i++){
-    totalAmount += finances[i][1];
+    totalProfit += finances[i][1];
 }
-console.log(totalAmount)
-
-// declared the variable to check the changes in array
-let Changes = [];
-
-// Calculate the change in profit
-for (let i =0; i < finances.length-1; i++){
-    Changes[i] = finances[i+1][1];
-    
-}
+console.log(totalProfit)
 
 
-    // Calculate the average change in profit
 
-let sum =Changes.reduce(
-    (a,b) => a+b,0);
-let avg = sum/Changes.length;
+// Calculate the change in profits over the month 
 
-console.log(avg);
+let changes = finances.reduce((acc, curr, index) => {
+    if (index === 0) {
+        
+        acc.push(curr[1]);
+    } else {
+        acc.push(curr[1] - finances[index - 1][1]);
+    }
+    return acc;
+}, []);
+
+// After cal the change in profit over the month the cal the average 
+// change over the month 
+
+let totalSum = 0;
+changes.forEach(change => {
+  totalSum += change;
+});
+let averageChange = totalSum / changes.length;
+
+console.log(averageChange.toFixed(2));
+
+// Calculated Greater Profits and Losses Over the Entire Period 
+
+let maxInc = [finances[changes.indexOf(Math.max(...changes))][0]]; 
+let Profit = Math.max(...changes);
+let addTwo = maxInc.concat(Profit);
 
 
-// let largestProfit = 0;
-// let largestProfitMonth = "";
-// let largestLoss = 0;
-// let largestLossMonth = "";
+let minDec = [finances[changes.indexOf(Math.min(...changes))][0]];
+let Loss = Math.min(...changes);
+let result = minDec.concat(Loss)
+console.log (result);
+console.log(addTwo);
 
-// for (let i = 1; i < finances.length; i++) {
-//   let profitLoss = finances[i] - finances[i-1];
-//   if (profitLoss > largestProfit) {
-//     largestProfit = profitLoss;
-//     largestProfitMonth = months[i];
-//   } else if (profitLoss < largestLoss) {
-//     largestLoss = profitLoss;
-//     largestLossMonth = months[i];
-//   }
-// }
 
-// console.log("Largest Profit: $" + largestProfit + " in " + largestProfitMonth);
-// console.log("Largest Loss: $" + largestLoss + " in " + largestLossMonth);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
