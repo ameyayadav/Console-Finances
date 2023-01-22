@@ -116,6 +116,8 @@ let changes = finances.reduce((acc, curr, index) => {
     return acc;
 }, []);
 
+console.log(changes);
+
 // After cal the change in profit over the month then looping over the created 
 //  array and cal the average 
 // change over the month 
@@ -145,7 +147,7 @@ console.log("Total Months: " + financeLength);
 console.log("Total : $" + totalProfit);
 console.log("Average Change : $" + averageChange.toFixed(2));
 console.log ("Greatest Increase in Profits: " + "$" + result);
-console.log("Greatest Increase in Loss: " + "$" + addTwo);
+console.log(`Greatest Increase in Loss: \$${addTwo}`);
 
 
 
