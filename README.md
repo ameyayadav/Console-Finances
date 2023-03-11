@@ -6,3 +6,5 @@ In this project, a company asked me to create a code using JavaScript, that you 
 
 #Installation 
 No Installation required 
+
+User just needs to the Chrome Web Developer Console, and from there, he needs to access the Console section.
